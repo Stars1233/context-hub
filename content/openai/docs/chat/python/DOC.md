@@ -3,8 +3,8 @@ name: chat
 description: "OpenAI API for text generation, chat completions, streaming, function calling, vision, embeddings, and assistants"
 metadata:
   languages: "python"
-  versions: "2.24.0"
-  updated-on: "2026-03-05"
+  versions: "2.26.0"
+  updated-on: "2026-03-06"
   source: maintainer
   tags: "openai,chat,llm,ai"
 ---
@@ -52,16 +52,59 @@ Use `python-dotenv` or your secret manager of choice to keep keys out of source 
 ## Models (as of March 2026)
 
 Default choices:
-- **General Text Tasks:** `gpt-5` or `gpt-5.2`
-- **Complex Reasoning Tasks:** `gpt-5.2`
-- **Audio Processing:** `gpt-4o-audio-preview` or `gpt-4o-mini-audio-preview`
-- **Vision Tasks:** `gpt-5`
-- **Code-focused / Search-preview:** Use `codex-mini-latest`, `gpt-4o-search-preview`, or `gpt-4o-mini-search-preview`
+- **General Text Tasks:** `gpt-5.4` (frontier) or `gpt-4.1` (non-reasoning)
+- **Complex Reasoning Tasks:** `gpt-5.4` or `gpt-5.4-pro`
+- **Fast & Cost-Efficient:** `gpt-5-mini` or `gpt-4.1-mini`
+- **Cheapest / Fastest:** `gpt-5-nano` or `gpt-4.1-nano`
+- **Audio Processing:** `gpt-audio` or `gpt-audio-mini`
+- **Vision Tasks:** `gpt-5.4` or `gpt-4.1`
+- **Agentic Coding:** `gpt-5.3-codex`
+- **Search (Chat Completions):** `gpt-5-search-api`, `gpt-4o-search-preview`, or `gpt-4o-mini-search-preview`
 
-All models:
-- `gpt-5.2`, `gpt-5`, `gpt-5-mini`, `gpt-5-nano`, `gpt-5-2025-08-07`, `gpt-5-mini-2025-08-07`, `gpt-5-nano-2025-08-07`, `gpt-5-chat-latest`,`gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`, `gpt-4.1-2025-04-14`, `gpt-4.1-mini-2025-04-14`, `gpt-4.1-nano-2025-04-14`, `o4-mini`, `o4-mini-2025-04-16`, `o3`, `o3-2025-04-16`, `o3-mini`, `o3-mini-2025-01-31`, `o1`, `o1-2024-12-17`, `o1-preview`, `o1-preview-2024-09-12`, `o1-mini`, `o1-mini-2024-09-12`, `gpt-4o`, `gpt-4o-2024-11-20`, `gpt-4o-2024-08-06`, `gpt-4o-2024-05-13`,
-`gpt-4o-mini`, `gpt-4o-mini-2024-07-18`, `chatgpt-4o-latest`, `codex-mini-latest` ,`gpt-4o-audio-preview`, `gpt-4o-audio-preview-2024-10-01`, `gpt-4o-audio-preview-2024-12-17`, `gpt-4o-audio-preview-2025-06-03`,
-`gpt-4o-mini-audio-preview`, `gpt-4o-mini-audio-preview-2024-12-17`, `gpt-4o-search-preview`, `gpt-4o-mini-search-preview`, `gpt-4o-search-preview-2025-03-11`, `gpt-4o-mini-search-preview-2025-03-11`, `gpt-4-turbo`, `gpt-4-turbo-2024-04-09`, `gpt-4-0125-preview`, `gpt-4-turbo-preview`, `gpt-4-1106-preview`, `gpt-4`, `gpt-4-0314`, `gpt-4-0613`, `gpt-4-32k`, `gpt-4-32k-0314`, `gpt-4-32k-0613`, `gpt-4-vision-preview`, `gpt-3.5-turbo`, `gpt-3.5-turbo-16k`, `gpt-3.5-turbo-0301`, `gpt-3.5-turbo-0613`, `gpt-3.5-turbo-1106`, `gpt-3.5-turbo-0125`, `gpt-3.5-turbo-16k-0613`
+Frontier (reasoning, configurable effort):
+- `gpt-5.4`, `gpt-5.4-2026-03-05`, `gpt-5.4-pro`, `gpt-5.4-pro-2026-03-05`
+- `gpt-5.2`, `gpt-5.2-2025-12-11`, `gpt-5.2-pro`
+- `gpt-5.1`, `gpt-5.1-2025-11-13`, `gpt-5.1-pro`
+- `gpt-5`, `gpt-5-2025-08-07`, `gpt-5-pro`
+- `gpt-5-mini`, `gpt-5-mini-2025-08-07`
+- `gpt-5-nano`, `gpt-5-nano-2025-08-07`
+
+Non-reasoning:
+- `gpt-4.1`, `gpt-4.1-2025-04-14`
+- `gpt-4.1-mini`, `gpt-4.1-mini-2025-04-14`
+- `gpt-4.1-nano`, `gpt-4.1-nano-2025-04-14`
+
+Reasoning (o-series, succeeded by GPT-5):
+- `o3`, `o3-2025-04-16`, `o3-pro`, `o3-pro-2025-06-10`
+- `o4-mini`, `o4-mini-2025-04-16`
+- `o3-mini`, `o3-mini-2025-01-31`
+- `o1`, `o1-2024-12-17`
+
+Deep research: `o3-deep-research`, `o4-mini-deep-research`
+
+Codex (agentic coding, Responses API only):
+- `gpt-5.3-codex`, `gpt-5.2-codex`, `gpt-5.1-codex`, `gpt-5.1-codex-max`, `gpt-5.1-codex-mini`, `gpt-5-codex`
+
+Audio chat: `gpt-audio`, `gpt-audio-2025-08-28`, `gpt-audio-mini`
+Realtime: `gpt-realtime`, `gpt-realtime-2025-08-28`, `gpt-realtime-mini`
+TTS: `gpt-4o-mini-tts`, `gpt-4o-mini-tts-2025-12-15`, `tts-1`, `tts-1-hd`
+STT: `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `gpt-4o-transcribe-diarize`, `whisper-1`
+Image generation: `gpt-image-1.5`, `gpt-image-1.5-2025-12-16`, `gpt-image-1`, `gpt-image-1-mini`, `chatgpt-image-latest`
+Embeddings: `text-embedding-3-large`, `text-embedding-3-small`, `text-embedding-ada-002`
+Moderation: `omni-moderation-latest`
+Search (Chat Completions only): `gpt-5-search-api`, `gpt-4o-search-preview`, `gpt-4o-mini-search-preview`
+
+Legacy (still available): `gpt-4o`, `gpt-4o-mini`, `gpt-4-turbo`, `gpt-3.5-turbo`
+
+Deprecated (shutdown scheduled):
+- `dall-e-3`, `dall-e-2` → May 12, 2026 (use `gpt-image-1`)
+- `o1-preview`, `o1-mini` → deprecated (use `o3` or `gpt-5`)
+- `codex-mini-latest` → shut down Feb 12, 2026
+- `chatgpt-4o-latest` → shut down Feb 17, 2026
+- `gpt-4o-realtime-preview` → Mar 24, 2026 (use `gpt-realtime`)
+- `gpt-4o-mini-audio-preview` → Mar 24, 2026 (use `gpt-audio-mini`)
+- `gpt-4.5-preview` → deprecated
+- Assistants API → sunset Aug 26, 2026 (migrate to Responses API)
 
 ## Basic Inference (Text Generation)
 
@@ -73,7 +116,7 @@ from openai import OpenAI
 client = OpenAI()
 
 response = client.responses.create(
-    model="gpt-4o",
+    model="gpt-5.4",
     instructions="You are a helpful coding assistant.",
     input="How do I reverse a string in Python?",
 )
@@ -89,7 +132,7 @@ from openai import OpenAI
 client = OpenAI()
 
 completion = client.chat.completions.create(
-    model="gpt-4o",
+    model="gpt-4.1",
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "How do I reverse a string in Python?"},
@@ -108,7 +151,7 @@ from openai import OpenAI
 client = OpenAI()
 
 response = client.responses.create(
-    model="gpt-4o-mini",
+    model="gpt-4.1-mini",
     input=[
         {
             "role": "user",
@@ -133,7 +176,7 @@ with open("path/to/image.png", "rb") as image_file:
     b64_image = base64.b64encode(image_file.read()).decode("utf-8")
 
 response = client.responses.create(
-    model="gpt-4o-mini",
+    model="gpt-4.1-mini",
     input=[
         {
             "role": "user",
@@ -156,7 +199,7 @@ client = AsyncOpenAI()
 
 async def main():
     response = await client.responses.create(
-        model="gpt-4o",
+        model="gpt-5.4",
         input="Explain quantum computing to a beginner."
     )
     print(response.output_text)
@@ -175,7 +218,7 @@ from openai import OpenAI
 client = OpenAI()
 
 stream = client.responses.create(
-    model="gpt-4o",
+    model="gpt-5.4",
     input="Write a short story about a robot.",
     stream=True,
 )
@@ -191,7 +234,7 @@ from openai import OpenAI
 client = OpenAI()
 
 stream = client.chat.completions.create(
-    model="gpt-4o",
+    model="gpt-4.1",
     messages=[{"role": "user", "content": "Tell me a joke"}],
     stream=True,
 )
@@ -218,7 +261,7 @@ class WeatherQuery(BaseModel):
 client = OpenAI()
 
 completion = client.chat.completions.parse(
-    model="gpt-4o",
+    model="gpt-4.1",
     messages=[{"role": "user", "content": "What's the weather like in Paris?"}],
     tools=[openai.pydantic_function_tool(WeatherQuery)],
 )
@@ -248,7 +291,7 @@ class MathResponse(BaseModel):
 
 client = OpenAI()
 completion = client.chat.completions.parse(
-    model="gpt-4o-2024-08-06",
+    model="gpt-4.1",
     messages=[
         {"role": "system", "content": "You are a helpful math tutor."},
         {"role": "user", "content": "solve 8x + 31 = 2"},
@@ -270,7 +313,7 @@ from openai import OpenAI
 client = OpenAI()
 
 response = client.audio.speech.create(
-    model="tts-1",
+    model="gpt-4o-mini-tts",
     voice="alloy",
     input="Hello, this is a test of the text to speech API."
 )
@@ -287,7 +330,7 @@ client = OpenAI()
 
 with open("audio.mp3", "rb") as audio_file:
     transcription = client.audio.transcriptions.create(
-        model="whisper-1",
+        model="gpt-4o-transcribe",
         file=audio_file
     )
 print(transcription.text)
@@ -365,7 +408,7 @@ from openai import OpenAI
 client = OpenAI()
 
 response = client.images.generate(
-    model="dall-e-3",
+    model="gpt-image-1.5",
     prompt="A futuristic city skyline at sunset",
     size="1024x1024",
     quality="standard",
@@ -384,7 +427,7 @@ from openai import OpenAI
 client = OpenAI()
 
 try:
-    response = client.responses.create(model="gpt-4o", input="Hello, world!")
+    response = client.responses.create(model="gpt-5.4", input="Hello, world!")
 except openai.RateLimitError:
     print("Rate limit exceeded. Please wait before retrying.")
 except openai.APIConnectionError:
@@ -402,7 +445,7 @@ except openai.APIStatusError as e:
 from openai import OpenAI
 client = OpenAI()
 
-response = client.responses.create(model="gpt-4o", input="Test message")
+response = client.responses.create(model="gpt-5.4", input="Test message")
 print(f"Request ID: {response._request_id}")
 ```
 
@@ -422,7 +465,7 @@ response = client.with_options(
     max_retries=3,
     timeout=60.0
 ).responses.create(
-    model="gpt-4o",
+    model="gpt-5.4",
     input="Hello"
 )
 ```
@@ -449,7 +492,7 @@ async def main():
         await connection.response.create()
 
         async for event in connection:
-            if event.type == 'response.text.delta':
+            if event.type == "response.output_text.delta":
                 print(event.delta, end="")
             elif event.type == "response.done":
                 break
@@ -463,7 +506,6 @@ asyncio.run(main())
 from openai import AzureOpenAI
 
 client = AzureOpenAI(
-    api_version="2023-07-01-preview",
     azure_endpoint="https://your-endpoint.openai.azure.com",
 )
 
